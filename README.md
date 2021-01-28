@@ -1,2 +1,2 @@
 # technical-test
-Angular Firebase Application
+Angular Firebase Material Application
