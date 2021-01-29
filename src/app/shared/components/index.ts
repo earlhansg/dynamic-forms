@@ -1,1 +1,3 @@
-export const components: any[] = [];
+import { SideNavComponent } from './side-nav/side-nav.component';
+
+export const components: any[] = [SideNavComponent];

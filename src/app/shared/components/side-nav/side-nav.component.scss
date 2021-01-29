@@ -1,0 +1,23 @@
+.container-sidenav {
+  width: 14.69rem;
+}
+
+.header {
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #000000;
+
+  &-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 0;
+    color: #2B2B2B;
+  }
+
+  &-btn {
+    margin-top: 1.5rem;
+    background-color: #EB5757;
+    color: white;
+    border-radius: 25px;
+  }
+}

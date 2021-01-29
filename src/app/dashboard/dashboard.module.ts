@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -10,6 +10,9 @@ import { DashboardComponent } from './container/dashboard.component';
   imports: [
     DashboardRoutingModule,
     SharedModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [],
   declarations: [DashboardComponent],
