@@ -1,0 +1,26 @@
+:host ::ng-deep .container {
+  margin: 2rem 1rem 1rem 1rem;
+  padding: 5px;
+  border-bottom: 1px solid #000000;
+
+  h3 {
+    line-height: 0;
+    font-weight: 700;
+    size: 2rem;
+  }
+
+}
+
+form { margin: 2rem 1rem 1rem 1rem; }
+
+.form-container {
+  margin-bottom: 1rem;
+
+  input {
+    width: 392px;
+    height: 37px;
+    border: 1px solid #828282;
+    border-radius: 0.5rem;
+  }
+
+}

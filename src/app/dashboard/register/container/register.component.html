@@ -1,1 +1,22 @@
-<h1>Register Form</h1>
+<div class="register">
+  <app-form [props]="personalData">
+    <div class="container" fxLayout="row" fxLayoutAlign="start center">
+      <h3>Datos Personales</h3>
+    </div>
+    <!-- end of .container -->
+  </app-form>
+  <app-form [props]="educations">
+    <div class="container" fxLayout="row" fxLayoutAlign="start center">
+      <h3>Educación</h3>
+    </div>
+    <!-- end of .container -->
+    <button mat-raised-button color="primary">Agregar</button>
+  </app-form>
+  <app-form [props]="languages">
+    <div class="container" fxLayout="row" fxLayoutAlign="start center">
+      <h3>Lenguajes de programación</h3>
+    </div>
+    <!-- end of .container -->
+    <button mat-raised-button color="primary">Agregar</button>
+  </app-form>
+</div>

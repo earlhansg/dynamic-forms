@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { RegisterRoutingModule } from './register-routing.module';
 
@@ -11,8 +11,13 @@ import { RegisterComponent } from './container/register.component';
     RegisterRoutingModule,
     SharedModule
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   exports: [],
-  declarations: [RegisterComponent],
+  declarations: [
+    RegisterComponent
+  ],
   providers: [],
 })
 export class RegisterModule { }
