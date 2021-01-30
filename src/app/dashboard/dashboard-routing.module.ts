@@ -13,6 +13,11 @@ const routes: Routes = [
       //   loadChildren: () => import('./test/test.module')
       //   .then(mod => mod.TestModule)
       // }
+      {
+        path: 'register',
+        loadChildren: () => import('./register/register.module')
+          .then(mod => mod.RegisterModule)
+      }
     ]
   }
 ];
