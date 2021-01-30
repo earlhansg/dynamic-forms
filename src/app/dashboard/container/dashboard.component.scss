@@ -3,9 +3,11 @@
   height: 100vh;
 }
 
-.dashboard-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+.container-sidenav {
+  width: 14.69rem;
+}
+
+.mat-toolbar {
+  background: #333333;
+  color: #ffffff;
 }

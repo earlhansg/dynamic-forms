@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-
-import { SideNavComponent } from 'src/app/shared/components/side-nav/side-nav.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,22 +6,17 @@ import { SideNavComponent } from 'src/app/shared/components/side-nav/side-nav.co
   styleUrls: ['dashboard.component.scss']
 })
 
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
 
-  @ViewChild('sideNav') sideNav: SideNavComponent;
+  isOpen = true;
 
 
-  constructor(private cdref: ChangeDetectorRef) { }
+  constructor() { }
 
   ngOnInit(): void { }
 
-  ngAfterViewInit(): void {
-    this.sideNav.toggle();
-    this.cdref.detectChanges();
-  }
-
   toggleSideBar(): void {
-    this.sideNav.toggle();
+    this.isOpen = !this.isOpen;
   }
 
 }
