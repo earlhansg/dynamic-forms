@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
+
 @Component({
   selector: 'app-side-nav',
   templateUrl: 'side-nav.component.html',
@@ -10,7 +11,6 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class SideNavComponent implements OnInit {
 
   @ViewChild('drawer') drawer: MatSidenav;
-
 
   constructor() { }
 

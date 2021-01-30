@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AngularMaterialModule } from '../angular-material.module';
 
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 export const modules = [
@@ -16,6 +16,6 @@ export const modules = [
   FormsModule,
   LayoutModule,
   FlexLayoutModule,
-  AngularMaterialModule
-  // FontAwesomeModule
+  AngularMaterialModule,
+  FontAwesomeModule
 ];
