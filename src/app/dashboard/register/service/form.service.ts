@@ -55,4 +55,12 @@ export class FormService {
     ];
   }
 
+  removeEducation(id: number): void {
+    this.educations = this.educations.filter((data, i) => i !== id);
+  }
+
+  removeLanguage(id: number): void {
+    this.languages = this.languages.filter((data, i) => i !== id);
+  }
+
 }
