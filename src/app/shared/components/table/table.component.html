@@ -1,0 +1,20 @@
+<div class="table-container">
+  <mat-table [dataSource]="dataSource" multiTemplateDataRows>
+    <!-- COLUMNS AND ROWS-->
+    <ng-container *ngFor="let key of displayedColumns" [matColumnDef]="key">
+      <mat-header-cell *matHeaderCellDef>{{ translation[key] }}</mat-header-cell>
+
+      <mat-cell *matCellDef="let element; let i = dataIndex">
+        <ng-container *ngIf="!!element[key]; else icon">
+          {{element[key]}}
+        </ng-container>
+        <ng-template #icon>
+          <mat-icon>more_vert</mat-icon>
+        </ng-template>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

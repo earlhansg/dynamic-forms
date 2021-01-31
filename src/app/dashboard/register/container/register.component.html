@@ -5,18 +5,20 @@
     </div>
     <!-- end of .container -->
   </app-form>
-  <app-form [props]="educations">
+  <app-form [props]="educations" *ngIf="(formService.eductions$ | async) as education">
     <div class="container" fxLayout="row" fxLayoutAlign="start center">
       <h3>Educación</h3>
     </div>
     <!-- end of .container -->
     <button mat-raised-button color="primary">Agregar</button>
+    <app-table [dataSource]="education" [displayedColumns]="['place', 'level', 'duration', 'action']"></app-table>
   </app-form>
-  <app-form [props]="languages">
+  <app-form [props]="languages" *ngIf="(formService.languages$ | async) as language">
     <div class="container" fxLayout="row" fxLayoutAlign="start center">
       <h3>Lenguajes de programación</h3>
     </div>
     <!-- end of .container -->
     <button mat-raised-button color="primary">Agregar</button>
+    <app-table [dataSource]="language" [displayedColumns]="['language', 'level', 'duration', 'action']"></app-table>
   </app-form>
 </div>

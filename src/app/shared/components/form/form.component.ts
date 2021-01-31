@@ -9,7 +9,7 @@ import { FormService } from 'src/app/dashboard/register/service/form.service';
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormComponent implements OnChanges {
 

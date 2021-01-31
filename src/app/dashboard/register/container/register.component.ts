@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   @ViewChild('personalForm') personalForm: FormComponent;
 
   educationFormValues$: Observable<any>;
+  dataSource$: Observable<any>;
 
   personalData = personalData;
   educations = educations;

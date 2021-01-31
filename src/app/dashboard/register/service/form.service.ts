@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 
 
 // tslint:disable-next-line: class-name
-interface form {
+export interface form {
   place?: string;
   language?: string;
   level: string;

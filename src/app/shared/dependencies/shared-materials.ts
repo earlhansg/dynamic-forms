@@ -3,6 +3,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
@@ -12,6 +13,7 @@ export const materials = [
   MatButtonModule,
   MatListModule,
   MatIconModule,
+  MatTableModule,
   OverlayModule,
   ScrollingModule
 ];
