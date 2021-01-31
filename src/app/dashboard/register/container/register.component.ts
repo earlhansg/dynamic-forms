@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { FormComponent } from 'src/app/shared/components/form/form.component';
+import { FormService } from '../service/form.service';
 import { personalData, educations, languages } from '../data/register-form.data';
 
 @Component({
@@ -8,14 +11,23 @@ import { personalData, educations, languages } from '../data/register-form.data'
   styleUrls: ['register.component.scss']
 })
 
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('personalForm') personalForm: FormComponent;
+
+  educationFormValues$: Observable<any>;
 
   personalData = personalData;
   educations = educations;
   languages = languages;
 
 
-  constructor() { }
+  constructor(public formService: FormService) { }
 
   ngOnInit(): void { }
+
+  ngAfterViewInit(): void {
+    console.log(this.personalForm.form.valid);
+  }
+
 }

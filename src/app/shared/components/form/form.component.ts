@@ -3,6 +3,7 @@ import {
   OnChanges, Output, EventEmitter
 } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FormService } from 'src/app/dashboard/register/service/form.service';
 
 @Component({
   selector: 'app-form',
@@ -25,7 +26,7 @@ export class FormComponent implements OnChanges {
   formProps: any = [];
 
 
-  constructor() { }
+  constructor(private formService: FormService) { }
 
   ngOnChanges(): void {
     const formDataObj: any = {};
@@ -44,8 +45,8 @@ export class FormComponent implements OnChanges {
   }
 
   submit(): void {
-    if (this.form.value) {
-      this.submitted.emit(this.form.value);
+    if (this.form.valid) {
+      this.formService.addEducation(this.form.value);
     }
   }
 
