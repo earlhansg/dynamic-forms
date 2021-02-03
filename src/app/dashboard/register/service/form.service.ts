@@ -22,6 +22,8 @@ export class FormService {
   private readonly _languages = new BehaviorSubject<any[]>([]);
   readonly languages$ = this._languages.asObservable();
 
+  editEducation = new BehaviorSubject<boolean>(false);
+  editLanguage = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
@@ -48,11 +50,35 @@ export class FormService {
     ];
   }
 
+  updateEducation(id: number, updatedValues: any): void {
+    const education = this.educations.find((list, i) => i === id);
+    if (education) {
+      const index = this.educations.indexOf(education);
+      this.educations[index] = {
+        ...education,
+        ...updatedValues
+      };
+      this.educations = [...this.educations];
+    }
+  }
+
   addLanguage(formValue: form): void {
-    this.educations = [
+    this.languages = [
       ...this.languages,
       formValue
     ];
+  }
+
+  updateLanguage(id: number, updatedValues: any): void {
+    const language = this.languages.find((list, i) => i === id);
+    if (language) {
+      const index = this.languages.indexOf(language);
+      this.languages[index] = {
+        ...language,
+        ...updatedValues
+      };
+      this.languages = [...this.languages];
+    }
   }
 
   removeEducation(id: number): void {

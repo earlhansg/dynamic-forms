@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component, OnInit, ChangeDetectionStrategy, Input,
+  Output, EventEmitter
+} from '@angular/core';
 
 
 @Component({
@@ -16,6 +19,12 @@ export class TableComponent implements OnInit {
   @Input()
   displayedColumns: string[];
 
+  @Output()
+  update = new EventEmitter();
+
+  @Output()
+  remove = new EventEmitter();
+
   translation: any = {
     place: 'Lugar de educación',
     language: 'Lenguaje',
@@ -28,6 +37,16 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+  clickToUpdate(value: any, id: number): void {
+    value['id'] = id;
+    this.update.emit(Object.assign(value, id));
+  }
+
+  clickToRemove(index: number): void {
+    this.remove.emit(index);
+  }
+
 }
 
 

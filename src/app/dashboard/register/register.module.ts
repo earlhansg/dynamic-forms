@@ -6,6 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { RegisterComponent } from './container/register.component';
 
+
 @NgModule({
   imports: [
     RegisterRoutingModule,

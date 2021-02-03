@@ -9,7 +9,17 @@
           {{element[key]}}
         </ng-container>
         <ng-template #icon>
-          <mat-icon>more_vert</mat-icon>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="clickToUpdate(element, i)">
+              <span>Editar</span>
+            </button>
+            <button mat-menu-item (click)="clickToRemove(i)">
+              <span>Borrar</span>
+            </button>
+          </mat-menu>
         </ng-template>
       </mat-cell>
     </ng-container>

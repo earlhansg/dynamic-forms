@@ -5,20 +5,26 @@
     </div>
     <!-- end of .container -->
   </app-form>
-  <app-form [props]="educations" *ngIf="(formService.eductions$ | async) as education">
+  <app-form [props]="educations" [formValues]="listEducation" [formName]="'educations'" [id]="educationId"
+    *ngIf="(formService.eductions$ | async) as education">
     <div class="container" fxLayout="row" fxLayoutAlign="start center">
       <h3>Educación</h3>
     </div>
     <!-- end of .container -->
-    <button mat-raised-button color="primary">Agregar</button>
-    <app-table [dataSource]="education" [displayedColumns]="['place', 'level', 'duration', 'action']"></app-table>
+    <button mat-raised-button color="primary" add *ngIf="!formService.editEducation.value">Agregar</button>
+    <button mat-raised-button color="primary" remove *ngIf="formService.editEducation.value">Actualizar</button>
+    <app-table [dataSource]="education" [displayedColumns]="['place', 'level', 'duration', 'action']"
+      (update)="onUpdate($event, 'education')" (remove)="onRemove($event, 'education')"></app-table>
   </app-form>
-  <app-form [props]="languages" *ngIf="(formService.languages$ | async) as language">
+  <app-form [props]="languages" [formValues]="listLanguage" [formName]="'languages'" [id]="languageId"
+    *ngIf="(formService.languages$ | async) as language">
     <div class="container" fxLayout="row" fxLayoutAlign="start center">
       <h3>Lenguajes de programación</h3>
     </div>
     <!-- end of .container -->
-    <button mat-raised-button color="primary">Agregar</button>
-    <app-table [dataSource]="language" [displayedColumns]="['language', 'level', 'duration', 'action']"></app-table>
+    <button mat-raised-button color="primary" add *ngIf="!formService.editLanguage.value">Agregar</button>
+    <button mat-raised-button color="primary" remove *ngIf="formService.editLanguage.value">Actualizar</button>
+    <app-table [dataSource]="language" [displayedColumns]="['language', 'level', 'duration', 'action']"
+      (update)="onUpdate($event, 'language')" (remove)="onRemove($event, 'language')"></app-table>
   </app-form>
 </div>
