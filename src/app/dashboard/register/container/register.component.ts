@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { FormComponent } from 'src/app/shared/components/form/form.component';
@@ -27,12 +27,17 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   languageId: number;
 
 
-  constructor(public formService: FormService) { }
+  constructor(public formService: FormService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-    console.log(this.personalForm.form.valid);
+    // console.log(this.personalForm.form.valid);
+    // // this.personalForm.form
+    // this.cd.detectChanges();
+    this.personalForm.form.statusChanges.subscribe(val => {
+      console.log(val);
+    });
   }
 
   onUpdate(value: any, type: string): void {
@@ -47,19 +52,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
       delete value.id;
       this.listLanguage = value;
     }
-    // this.idToBeUpdated = value.id;
-    // delete value.id;
-    // this.toBeUpdated = value;
   }
-
-  // update(type: string): void {
-  //   if (type === 'educations') {
-  //     console.log('updated', this.toBeUpdated);
-  //     this.formService.updateEducation(this.idToBeUpdated, this.toBeUpdated);
-  //     this.toBeUpdated = {};
-  //   }
-  //   // else { this.formService.removeLanguage(id); }
-  // }
 
   onRemove(id: number, type: string): void {
     if (type === 'education') {

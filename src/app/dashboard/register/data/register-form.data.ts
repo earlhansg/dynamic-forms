@@ -4,14 +4,20 @@ export const personalData = {
     type: 'text',
     placeholder: 'Nombres',
     className: 'firstName',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   lastName: {
     label: 'Apellidos',
     type: 'text',
     placeholder: 'Apellidos',
     className: 'lastName',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   idNumber: {
     label: 'DNI',
@@ -30,21 +36,30 @@ export const personalData = {
     type: 'text',
     placeholder: 'Dirección',
     className: 'address',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   mail: {
     label: 'Correo',
     type: 'text',
     placeholder: 'Correo',
     className: 'mail',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   personalDescription: {
     label: 'Descripción personal ',
     type: 'text',
     placeholder: 'Descripción personal ',
     className: 'personalDescription',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   }
 };
 
@@ -54,14 +69,20 @@ export const educations = {
     type: 'text',
     placeholder: 'Lugar de educación ',
     className: 'place',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   level: {
     label: 'Nivel logrado',
     type: 'text',
     placeholder: 'Nivel logrado',
     className: 'level',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   duration: {
     label: 'Tiempo',
@@ -83,20 +104,31 @@ export const languages = {
     type: 'text',
     placeholder: 'Lenguaje',
     className: 'language',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   level: {
     label: 'Nivel logrado',
     type: 'text',
     placeholder: 'Nivel logrado',
     className: 'level',
-    value: ''
+    value: '',
+    validators: {
+      required: true
+    }
   },
   duration: {
     label: 'Tiempo de experiencia en el lenguaje',
     type: 'text',
     placeholder: 'Tiempo de experiencia en el lenguaje',
     className: 'duration',
-    value: ''
+    value: '',
+    validators: {
+      required: true,
+      max: 8,
+      number: true
+    }
   }
 };

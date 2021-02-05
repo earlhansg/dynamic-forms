@@ -11,7 +11,8 @@
       <h3>Educación</h3>
     </div>
     <!-- end of .container -->
-    <button mat-raised-button color="primary" add *ngIf="!formService.editEducation.value">Agregar</button>
+    <button mat-raised-button color="primary" add *ngIf="!formService.editEducation.value"
+      [disabled]="!this.personalForm.form.valid">Agregar</button>
     <button mat-raised-button color="primary" remove *ngIf="formService.editEducation.value">Actualizar</button>
     <app-table [dataSource]="education" [displayedColumns]="['place', 'level', 'duration', 'action']"
       (update)="onUpdate($event, 'education')" (remove)="onRemove($event, 'education')"></app-table>
@@ -22,7 +23,8 @@
       <h3>Lenguajes de programación</h3>
     </div>
     <!-- end of .container -->
-    <button mat-raised-button color="primary" add *ngIf="!formService.editLanguage.value">Agregar</button>
+    <button mat-raised-button color="primary" add *ngIf="!formService.editLanguage.value"
+      [disabled]="!this.personalForm.form.valid">Agregar</button>
     <button mat-raised-button color="primary" remove *ngIf="formService.editLanguage.value">Actualizar</button>
     <app-table [dataSource]="language" [displayedColumns]="['language', 'level', 'duration', 'action']"
       (update)="onUpdate($event, 'language')" (remove)="onRemove($event, 'language')"></app-table>
