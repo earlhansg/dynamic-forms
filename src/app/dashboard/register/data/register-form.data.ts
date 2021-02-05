@@ -18,7 +18,12 @@ export const personalData = {
     type: 'text',
     placeholder: 'DNI (numerico)',
     className: 'idNumber',
-    value: ''
+    value: '',
+    validators: {
+      required: true,
+      max: 8,
+      number: true
+    }
   },
   address: {
     label: 'Dirección',
@@ -63,7 +68,12 @@ export const educations = {
     type: 'text',
     placeholder: 'Tiempo',
     className: 'duration',
-    value: ''
+    value: '',
+    validators: {
+      required: true,
+      max: 8,
+      number: true
+    }
   }
 };
 

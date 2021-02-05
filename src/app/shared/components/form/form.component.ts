@@ -2,7 +2,7 @@ import {
   Component, ChangeDetectionStrategy, Input,
   OnChanges, Output, EventEmitter
 } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormService } from 'src/app/dashboard/register/service/form.service';
 
 @Component({
@@ -46,17 +46,40 @@ export class FormComponent implements OnChanges {
 
   initializeForm(): void {
     for (const prop of Object.keys(this.props)) {
-      this.formDataObj[prop] = new FormControl(this.props[prop].value);
+      console.log(this.props[prop]?.label);
+      this.formDataObj[prop] = new FormControl(this.props[prop].value,
+        this.mapValidator(this.props[prop].validators));
       this.formProps.push({
         key: prop,
         label: this.props[prop].label,
         type: this.props[prop].type,
         className: this.props[prop].className,
         placeholder: this.props[prop].placeholder || '',
-        options: this.props[prop].options || []
+        options: this.props[prop].options || [],
       });
     }
     this.form = new FormGroup(this.formDataObj);
+    // this.form.get('firstname')?.valid
+  }
+
+  mapValidator(validators: any): any {
+    if (validators) {
+      return Object.keys(validators).map((validationType): any | void => {
+        if (validationType === 'required') {
+          console.log('required');
+          return Validators.required;
+        }
+        else if (validationType === 'max') {
+          console.log('max');
+          return Validators.max(validators[validationType]);
+        }
+        else if (validationType === 'number') {
+          console.log('number');
+          return Validators.pattern(/^-?(0|[1-9]\d*)?$/);
+        }
+      });
+    }
+    else { return []; }
   }
 
   submit(): void {

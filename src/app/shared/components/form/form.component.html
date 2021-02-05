@@ -26,6 +26,17 @@
           <!-- end of .form-container  -->
         </div>
         <!-- end of ngSwitch  -->
+        <div class="error" *ngIf="form.get(prop.key)?.invalid && (form.get(prop.key)?.dirty ||
+          form.get(prop.key)?.touched)">
+          <div *ngIf="form.get(prop.key)?.errors?.required">
+            You have to provide a value.
+          </div>
+          <div *ngIf="form.get(prop.key)?.errors?.max">
+            You have to provide a value greater or equal to
+            {{ form.get(prop.key)?.errors?.max.max }}
+          </div>
+        </div>
+        <!-- end of .error  -->
       </div>
       <!-- end of formProps loop  -->
       <ng-content select="button"></ng-content>
